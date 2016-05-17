@@ -12,4 +12,5 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '~> 2.0'
   s.files = Dir['{bin,lib,man,test,spec}/**/*', 'README*', 'LICENSE*']
   s.require_paths = ['lib']
+  s.documentation_uri = "doc-company.inchbase.com"
 end
