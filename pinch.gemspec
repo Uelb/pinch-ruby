@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'pinch-api'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.summary = 'pinch'
   s.description = 'A simple gem to easily connect to the Inch Housing Intervention Interface'
   s.authors = ['Inchdev', 'Uelb']
