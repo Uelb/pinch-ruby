@@ -6,10 +6,10 @@ module Pinch
     @base_uri = 'https://api-company.inchbase.com/api/v1'
 
     # Your api key
-    @x_api_token = TODO: Replace
+    @x_api_token = nil
 
     # Your registered email
-    @x_api_email = TODO: Replace
+    @x_api_email = nil
 
     # create the getters and setters
     class << self
