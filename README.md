@@ -4,13 +4,13 @@ Pinch
 ## Installation
 
 To install this gem, simply type :
-`gem install pinch`
+`gem install pinch-api`
 
 You can also add it to a gemfile :
-`gem 'pinch'`
+`gem 'pinch-api'`
 
 Finally, if you wish to use the head version, you can specify the github master branch :
-`gem pinch, github: 'Inchdev/pinch-ruby'`
+`gem pinch-api, github: 'Inchdev/pinch-ruby'`
 
 ## Configuration
 There is 2 different ways of authenticating yourself, either from an initializer file :
