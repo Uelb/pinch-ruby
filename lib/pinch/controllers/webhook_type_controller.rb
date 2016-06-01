@@ -1,7 +1,7 @@
-# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 05/13/2016
+# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 06/01/2016
 
 module Pinch
-  class WebhookTypeController
+  class WebhookTypeController < BaseController
     @@instance = WebhookTypeController.new
     # Singleton instance of the controller class
     def self.instance
@@ -34,16 +34,13 @@ module Pinch
       # invoke the API call request to fetch the response
       _response = Unirest.get _query_url, headers: _headers
 
-      # Error handling using HTTP status codes
-      if _response.code == 401
-        raise APIException.new 'Your API key is incorrect', 401, _response.body
-      elsif _response.code == 400
-        raise APIException.new 'There is an error in the parameters you send', 400, _response.body
-      elsif _response.code == 404
-        raise APIException.new 'Cannot find the resource specified', 404, _response.body
-      elsif !_response.code.between?(200, 206) # [200,206] = HTTP OK
-        raise APIException.new 'HTTP Response Not OK', _response.code, _response.body
+      # Endpoint error handling using HTTP status codes.
+      if _response.code == 404
+        return nil
       end
+
+      # Global error handling using HTTP status codes.
+      validate_response(_response)
         
       # Try to cast response to list of desired type
       if _response.body.instance_of? Array

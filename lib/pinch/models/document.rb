@@ -1,7 +1,15 @@
 # This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 06/01/2016
 
 module Pinch
-  class Webhook
+  class Document
+
+    # Where to retrieve the document
+    # @return [String]
+    attr_reader :url
+
+    # If possible, a thumbnail of the document
+    # @return [String]
+    attr_reader :thumb_url
 
     # TODO: Write general description for this method
     # @return [Integer]
@@ -9,18 +17,16 @@ module Pinch
 
     # TODO: Write general description for this method
     # @return [String]
-    attr_accessor :url
+    attr_accessor :name
 
-    # TODO: Write general description for this method
-    # @return [Integer]
-    attr_accessor :webhook_type
-
-    def initialize(id = nil,
-                   url = nil,
-                   webhook_type = nil)
-      @id = id
+    def initialize(url = nil,
+                   thumb_url = nil,
+                   id = nil,
+                   name = nil)
       @url = url
-      @webhook_type = webhook_type
+      @thumb_url = thumb_url
+      @id = id
+      @name = name
 
     end
 
@@ -40,22 +46,25 @@ module Pinch
         nil
       else
         # Extract variables from the hash
-        id = hash["id"]
         url = hash["url"]
-        webhook_type = hash["webhook_type"]
+        thumb_url = hash["thumb_url"]
+        id = hash["id"]
+        name = hash["name"]
         # Create object from extracted values
-        Webhook.new(id,
-                    url,
-                    webhook_type)
+        Document.new(url,
+                     thumb_url,
+                     id,
+                     name)
       end
     end
 
     # Defines the key map for json serialization
     def key_map
       hash = {}
-      hash['id'] = id
       hash['url'] = url
-      hash['webhook_type'] = webhook_type
+      hash['thumb_url'] = thumb_url
+      hash['id'] = id
+      hash['name'] = name
       hash
     end
   end

@@ -1,4 +1,4 @@
-# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 05/13/2016
+# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 06/01/2016
 
 module Pinch
   class Ticket
@@ -43,6 +43,10 @@ module Pinch
     # @return [String]
     attr_reader :manager
 
+    # TODO: Write general description for this method
+    # @return [List of Document]
+    attr_accessor :documents
+
     def initialize(id = nil,
                    name = nil,
                    description = nil,
@@ -52,7 +56,8 @@ module Pinch
                    unit = nil,
                    access = nil,
                    agency = nil,
-                   manager = nil)
+                   manager = nil,
+                   documents = nil)
       @id = id
       @name = name
       @description = description
@@ -63,6 +68,7 @@ module Pinch
       @access = access
       @agency = agency
       @manager = manager
+      @documents = documents
 
     end
 
@@ -71,9 +77,9 @@ module Pinch
     end
 
     # Creates JSON of the curent object
-    def to_json
+    def to_json(options = {})
       hash = key_map
-      hash.to_json
+      hash.to_json(options)
     end
 
     # Creates an instance of the object from a hash
@@ -97,6 +103,12 @@ module Pinch
         access = hash["access"]
         agency = hash["agency"]
         manager = hash["manager"]
+        # Parameter is an array, so we need to iterate through it
+        documents = nil
+        if hash["documents"] != nil
+          documents = Array.new
+          hash["documents"].each{|structure| documents << Document.from_hash(structure)}
+        end
         # Create object from extracted values
         Ticket.new(id,
                    name,
@@ -107,7 +119,8 @@ module Pinch
                    unit,
                    access,
                    agency,
-                   manager)
+                   manager,
+                   documents)
       end
     end
 
@@ -124,6 +137,7 @@ module Pinch
       hash['access'] = access
       hash['agency'] = agency
       hash['manager'] = manager
+      hash['documents'] = documents.map(&:key_map)
       hash
     end
   end

@@ -1,4 +1,4 @@
-# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 05/13/2016
+# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 06/01/2016
 
 module Pinch
   class Configuration
@@ -6,10 +6,10 @@ module Pinch
     @base_uri = 'https://api-company.inchbase.com/api/v1'
 
     # Your api key
-    @x_api_token = TODO: Replace
+    @x_api_token = 'TODO: Replace'
 
     # Your registered email
-    @x_api_email = TODO: Replace
+    @x_api_email = 'TODO: Replace'
 
     # create the getters and setters
     class << self

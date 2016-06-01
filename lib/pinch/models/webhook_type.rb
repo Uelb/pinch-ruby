@@ -1,4 +1,4 @@
-# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 05/13/2016
+# This file was automatically generated for Pinch by APIMATIC v2.0 ( https://apimatic.io ) on 06/01/2016
 
 module Pinch
   class WebhookType
@@ -23,9 +23,9 @@ module Pinch
     end
 
     # Creates JSON of the curent object
-    def to_json
+    def to_json(options = {})
       hash = key_map
-      hash.to_json
+      hash.to_json(options)
     end
 
     # Creates an instance of the object from a hash

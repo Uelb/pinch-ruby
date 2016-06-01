@@ -32,12 +32,12 @@ Use the following steps to build a gem and use locally
 
     2. Run the install command  
         ```
-        gem install ./pinch-1.0.gem
+        gem install ./pinch-0.1.0.gem
         ```
 
     3. In your Gemfile add this line
         ```
-        gem 'pinch', '~> 1.0'
+        gem 'pinch', '~> 0.1.0'
         ```
 
     4. Now create an instance and use the instance methods, like following.
